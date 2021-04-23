@@ -18,10 +18,18 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Tag for the intent extra.
+    public static final String EXTRA_MESSAGE =
+            "com.example.android.droidcafe.extra.MESSAGE";
+
+    // The order message, displayed in the Toast and sent to the new Activity.
+    private String mOrderMessage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -66,21 +74,24 @@ public class MainActivity extends AppCompatActivity {
      * Shows a message that the donut image was clicked.
      */
     public void showDonutOrder(View view) {
-        displayToast(getString(R.string.donut_order_message));
+        mOrderMessage = getString(R.string.donut_order_message);
+        displayToast(mOrderMessage);
     }
 
     /**
      * Shows a message that the ice cream sandwich image was clicked.
      */
     public void showIceCreamOrder(View view) {
-        displayToast(getString(R.string.ice_cream_order_message));
+        mOrderMessage = getString(R.string.ice_cream_order_message);
+        displayToast(mOrderMessage);
     }
 
     /**
      * Shows a message that the froyo image was clicked.
      */
     public void showFroyoOrder(View view) {
-        displayToast(getString(R.string.froyo_order_message));
+        mOrderMessage = getString(R.string.froyo_order_message);
+        displayToast(mOrderMessage);
     }
 
 

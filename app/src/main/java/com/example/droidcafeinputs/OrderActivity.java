@@ -20,6 +20,12 @@ public class OrderActivity extends AppCompatActivity  implements AdapterView.OnI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
 
+        // Get the intent and its data.
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        TextView textView = findViewById(R.id.order_textview);
+        textView.setText(message);
+
         // Create the spinner.
                 Spinner spinner = findViewById(R.id.label_spinner);
         if (spinner != null) {
